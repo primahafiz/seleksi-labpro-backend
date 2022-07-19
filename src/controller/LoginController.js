@@ -6,12 +6,13 @@ module.exports = {
     async login(req,res){
         const admin = await Admin.findAll({
             where : {
-                Username : req.body.username 
+                Username : req.body.username
             }
         })
         const customer = await Customer.findAll({
             where : {
-                Username : req.body.username 
+                Username : req.body.username,
+                IsAccepted : true
             }
         })
         if(admin.length==1){

@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
         async transferTransaction(usernameReceiver,transferValue, transferCurrency){
           const transaction = await TransferTransaction.create({
             UsernameSender : this.Username,
-            usernameReceiver : this.usernameReceiver,
+            usernameReceiver : usernameReceiver,
             TransferValue : transferValue,
             TransferCurrency : transferCurrency
           })
@@ -32,7 +32,9 @@ module.exports = (sequelize, DataTypes) => {
         },
         Password : DataTypes.STRING,
         Name : DataTypes.STRING,
-        Photo : DataTypes.TEXT
+        Photo : DataTypes.TEXT,
+        IsProceed : DataTypes.BOOLEAN,
+        IsAccepted : DataTypes.BOOLEAN
       }, { sequelize });
   
     return Customer

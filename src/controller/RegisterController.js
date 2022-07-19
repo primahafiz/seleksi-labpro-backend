@@ -12,7 +12,9 @@ module.exports = {
                 Username : req.body.username,
                 Password : hashedPassword,
                 Name : req.body.name,
-                Photo : base64Photo
+                Photo : base64Photo,
+                IsProceed : false,
+                IsAccepted : false
             })
         }catch(err){
             res.send({
