@@ -1,11 +1,9 @@
 const {Sequelize,Model} = require('sequelize')
-const Customer = require('./Customer')
-const RequestTransaction = require('./RequestTransaction')
 
 module.exports = (sequelize, DataTypes) => {
     class Admin extends Model {
         async verifRegistration(username,status){
-          const regis = await Customer.update(
+          const regis = await sequelize.models.Customer.update(
             {
                 isProceed : true,
                 isAccepted : status
@@ -20,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
           return regis
         }
         async verifRequest(IdRequest,status){
-          const trasaction = await Request.update(
+          const transaction = await sequelize.models.RequestTransaction.update(
             {
                 isProceed : true,
                 isAccepted : status
@@ -32,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
                 }
             }
           )
-          return trasaction
+          return transaction
         }
       }
       Admin.init({

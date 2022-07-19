@@ -6,6 +6,8 @@ const {sequelize} = require('./models')
 const config = require('./config/config')
 const session = require('express-session')
 const { uuid } = require('uuidv4');
+const schedule = require('node-schedule');
+const UpdateCurrency = require('./utils/UpdateCurrency')
 
 const app = express()
 app.use(morgan('combined'))
@@ -31,6 +33,14 @@ app.use(session({
 require('./routes')(app)
 
 process.env.TZ = "Asia/Jakarta";
+
+const rule = new schedule.RecurrenceRule();
+rule.hour = 23;
+rule.minute = 0;
+
+const job = schedule.scheduleJob(rule,async function(){
+    await UpdateCurrency.updateCurrency()
+})
 
 sequelize.sync({force:false})
     .then(() => {

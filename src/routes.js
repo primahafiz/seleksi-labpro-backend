@@ -6,11 +6,10 @@ const HistoryRequestController = require('./controller/HistoryRequestController'
 const HistoryTransferController = require('./controller/HistoryTransferTransaction')
 const VerifyRegistrationController = require('./controller/VerifyRegistrationController')
 const VerifyRequestController = require('./controller/VerifyRequestController')
+const CurrencyListController = require('./controller/CurrencyListController')
 
 module.exports = (app) => {
-    app.get('/',(req,res)=>{
-        console.log('hello world')
-    })
+    app.get('/',CurrencyListController.getListCurrency)
 
     app.post('/register',RegisterController.registerCustomer)
 

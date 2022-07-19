@@ -1,4 +1,4 @@
-const TransferTransaction = require('../models/TransferTransaction')
+const {TransferTransaction} = require('../models')
 
 module.exports = {
     async getTransferHistory(req,res){

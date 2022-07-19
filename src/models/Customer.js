@@ -1,11 +1,9 @@
 const {Sequelize,Model} = require('sequelize')
-const RequestTransaction = require('./RequestTransaction')
-const TransferTransaction = require('./TransferTransaction')
 
 module.exports = (sequelize, DataTypes) => {
     class Customer extends Model {
         async requestTransaction(requestValue, requestCurrency){
-          const transaction = await RequestTransaction.create({
+          const transaction = await sequelize.models.RequestTransaction.create({
             Username : this.Username,
             RequestValue : requestValue,
             RequestCurrency : requestCurrency,
@@ -16,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
         }
 
         async transferTransaction(usernameReceiver,transferValue, transferCurrency){
-          const transaction = await TransferTransaction.create({
+          const transaction = await sequelize.models.TransferTransaction.create({
             UsernameSender : this.Username,
             usernameReceiver : usernameReceiver,
             TransferValue : transferValue,

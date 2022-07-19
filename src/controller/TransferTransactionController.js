@@ -1,4 +1,4 @@
-const Customer = require('../models/Customer')
+const {Customer} = require('../models')
 
 module.exports = {
     async transTransaction(req,res){

@@ -1,4 +1,4 @@
-const RequestTransaction = require('../models/RequestTransaction')
+const {RequestTransaction} = require('../models')
 
 module.exports = {
     async getRequestHistory(req,res){

@@ -1,5 +1,5 @@
 const {sequelize} = require('../models')
-const Customer = require('../models/Customer')
+const {Customer} = require('../models')
 const fs = require('fs')
 const bcrypt = require('bcrypt')
 
