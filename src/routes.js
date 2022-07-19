@@ -7,13 +7,17 @@ const HistoryTransferController = require('./controller/HistoryTransferTransacti
 const VerifyRegistrationController = require('./controller/VerifyRegistrationController')
 const VerifyRequestController = require('./controller/VerifyRequestController')
 const CurrencyListController = require('./controller/CurrencyListController')
+const HomeController = require('./controller/HomeController')
 
 module.exports = (app) => {
-    app.get('/',CurrencyListController.getListCurrency)
 
+    app.get('/',HomeController.getHomeInfo)
+    
     app.post('/register',RegisterController.registerCustomer)
-
+    
     app.post('/login',LoginController.login)
+    
+    app.get('/request',CurrencyListController.getListCurrency)
 
     app.post('/request',RequestTransactionController.reqTransaction)
 
