@@ -7,6 +7,7 @@ const config = require('./config/config')
 const session = require('express-session')
 const { uuid } = require('uuidv4');
 const schedule = require('node-schedule');
+const bcrypt = require('bcrypt')
 const UpdateCurrency = require('./utils/UpdateCurrency')
 
 const app = express()

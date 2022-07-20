@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         Password : DataTypes.STRING,
         Name : DataTypes.STRING,
-        Photo : DataTypes.TEXT,
+        Photo : DataTypes.STRING,
         IsProceed : DataTypes.BOOLEAN,
         IsAccepted : DataTypes.BOOLEAN
       }, { sequelize });

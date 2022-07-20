@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "seleksi-labpro",
+  "private_key_id": "bd2cdbdc3b151c86151d17494ec66a6f27547107",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCStLK+9cnJB/jE\niIkmHWMPm0uw5P6CgJe/vVRjMsA5ShgFmcj+Q3lCtGwQ1PhY0ZaHCtkpnLqdk1wQ\nViOb7JlJyzKAeM+FosyrxteVjzlfYpc9lgChAzHcChq3cRDc7l+5bH3Ha4yHyckP\nWjEqivYgtj28RUsv9WjQxNDJ3K/eyexJ3tKXguu+kMJ8/G7aejLhknNcvZJ4/8AK\nLVD1nA26wWp1jb025pLBSFYSoCVv1WOpXE4IE6aBU+/idqxZZlINr1cnhUw9ZNvr\n3Nmr0lR0Jh1a/rVzZv8CBMfBRgp3pZr4HB3cpN9DHRiaZJQMykPzcHg+1GKn8qtL\n73Mr1F3dAgMBAAECggEAQqNz4gvxebB2ToeajMaifa9T5WlPNmZFB+JvV5Pw/tTq\nLnkZdG2fwi4EPG0Q1f91+ady11UK65LJKd6G1EfXpU54hSTbVt+JSqnKuXPSYsJ8\n4oulg33ZAxNP6W2hdEmPD8H5LEFtFy0QeDnGxYVToa5GQqPTMFiwIMyV7muhM3gj\nFiX5ry44s5+fpCaD57Zk5Ez5/SSekOOj/M0jmR3eirDcpdbftTumLddDkF2GtT+g\nwHeSYFuZ4Qj6P7nkyD9FFeH5vP54xVKbTBpSYSGPuJn6StJUH27Di6S+xkezYgdv\n+HjdpUCKFR2WIwtzDshc/REhzjUBRNzQKyWXLLVSHQKBgQDFl7EVYJZdaQHnregq\nKH/58qBjhC6DoYhSU6lHggPfzvDjly+aNjo/L1bULWvR6sMmFno0+74DYb7JsDil\nFq0nF+drwWDJ9tjKehsg7mQ8B6VDXF9S3ZpT/ijzISKwTpny191jSP7fAj/hN9Vq\nvKMIVNbgmsFJbU6S78vCUXnMnwKBgQC+Eklljti+X2SjIyoKu3gAuIL0Bn4M8gUo\np57JZCvjYByEpNdBtfCjQgYiXbnv08EWKUTzdcyyKJQ3z4kSf8D9lDW9MaHH0mgv\nfC7CgVHY3ywczDK2i2u5ubPJl5PUHxjvOB5pI1QAXAqjEl0GbmuIULITjIWmKN1x\n/k2elb4IAwKBgD70qv5lrOMMPwgjN9Ke3s+zh3jNt8hG4llgwJHBEhzwIX5SQF+B\nIaPaIG8wHadfhlgPV1akUxFexlwaoqGvDPJkwl5p2b3fwYkZyKUAb71Urko9Fz4e\nzzotw7xbdWL5WEGwl6A3tMU3QUUv9faxLbzM0z3y8NzFUACvGJvMO+N/AoGAF8yW\nYB8IyJ2NLlgi1YEvv3da/k8pzVkoiDSkzza5wBiyuXEietnbLbYAqqDtvTfYf3vf\nZFSlstEd7fcQhL52XcoHCI+EYE7aOMfl2vjyVKNtFJYE65J9hJ3aAy31lqPmLV3r\ngOKpi/n6YvzTpRCCamkgQw5fVbTcNX/QHEFHsB0CgYAsEYYNOGmNK/uz8AnKBHlK\n3rsPyNxC9II0aoGt1WFj6hdbriQW/rt6rFokiEfuyY1IbZ5r8h1h+aOdQKIaWClZ\n/9OcltSf3f1RHgD+TgYa2i58v/wrgIhMyU2kq574vvxMZzQlEoMygg25CpGDdqwv\nHBBiGgAEScaZjpUOdIyU3w==\n-----END PRIVATE KEY-----\n",
+  "client_email": "prima-608@seleksi-labpro.iam.gserviceaccount.com",
+  "client_id": "113977775967149992023",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/prima-608%40seleksi-labpro.iam.gserviceaccount.com"
+}

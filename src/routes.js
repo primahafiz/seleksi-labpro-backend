@@ -1,3 +1,4 @@
+const Multer = require('multer')
 const RegisterController = require('./controller/RegisterController')
 const LoginController = require('./controller/LoginController')
 const RequestTransactionController = require('./controller/RequestTransactionController')
@@ -12,12 +13,19 @@ const HomeController = require('./controller/HomeController')
 module.exports = (app) => {
 
     app.get('/',HomeController.getHomeInfo)
+
+    const multer = Multer({
+        storage: Multer.memoryStorage(),
+        limits: {
+          fileSize: 10 * 1024 * 1024
+        }
+      });
     
-    app.post('/register',RegisterController.registerCustomer)
+    app.post('/register',multer.single('photo'), RegisterController.registerCustomer)
     
     app.post('/login',LoginController.login)
     
-    app.get('/request',CurrencyListController.getListCurrency)
+    app.get('/request', CurrencyListController.getListCurrency)
 
     app.post('/request',RequestTransactionController.reqTransaction)
 
