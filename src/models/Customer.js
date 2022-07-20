@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
         async transferTransaction(usernameReceiver,transferValue, transferCurrency){
           const transaction = await sequelize.models.TransferTransaction.create({
             UsernameSender : this.Username,
-            usernameReceiver : usernameReceiver,
+            UsernameReceiver : usernameReceiver,
             TransferValue : transferValue,
             TransferCurrency : transferCurrency
           })

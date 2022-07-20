@@ -10,7 +10,7 @@ module.exports = {
             }
         })
         for(let i=0;i<reqData.length;i++){
-            saldo += await CurrencyConversion.convertToIDR(reqData[i].RequestCurrency,reqdata[i].RequestValue)
+            saldo += await CurrencyConversion.convertToIDR(reqData[i].RequestCurrency,reqData[i].RequestValue)
         }
 
         const transSendData = await TransferTransaction.findAll({

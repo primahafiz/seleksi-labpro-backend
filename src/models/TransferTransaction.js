@@ -13,14 +13,14 @@ module.exports = (sequelize, DataTypes) => {
         UsernameSender : {
             type : DataTypes.STRING,
             references : {
-                model : 'Admins',
+                model : 'Customers',
                 key : 'Username'
             }
         },
         UsernameReceiver : {
             type : DataTypes.STRING,
             references : {
-                model : 'Admins',
+                model : 'Customers',
                 key : 'Username'
             }
         },

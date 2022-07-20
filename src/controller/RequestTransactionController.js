@@ -2,11 +2,13 @@ const {Customer} = require('../models')
 
 module.exports = {
     async reqTransaction(req,res){
-        const customer = Customer.findAll({
+        const customer = await Customer.findAll({
             where : {
                 Username : req.session.username
             }
         })
-        const newTransaction = await customer.requestTransaction(req.body.requestValue,req.body.requestCurrency)
+        console.log(customer)
+        const newTransaction = await customer[0].requestTransaction(req.body.requestValue,req.body.requestCurrency)
+        res.status(200).send()
     }
 }

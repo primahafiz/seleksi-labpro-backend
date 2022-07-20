@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
         Username : {
             type : DataTypes.STRING,
             references : {
-                model : 'Admins',
+                model : 'Customers',
                 key : 'Username'
             }
         },

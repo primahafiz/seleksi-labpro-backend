@@ -5,32 +5,30 @@ module.exports = (sequelize, DataTypes) => {
         async verifRegistration(username,status){
           const regis = await sequelize.models.Customer.update(
             {
-                isProceed : true,
-                isAccepted : status
+                IsProceed : true,
+                IsAccepted : status
             },
             {
                 where : {
                     Username : username,
-                    isProceed : false
+                    IsProceed : false
                 }
             }
           )
-          return regis
         }
         async verifRequest(IdRequest,status){
           const transaction = await sequelize.models.RequestTransaction.update(
             {
-                isProceed : true,
-                isAccepted : status
+                IsProceed : true,
+                IsAccepted : status
             },
             {
                 where : {
                     IDRequest : IdRequest,
-                    isProceed : false
+                    IsProceed : false
                 }
             }
           )
-          return transaction
         }
       }
       Admin.init({
