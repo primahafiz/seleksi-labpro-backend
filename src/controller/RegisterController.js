@@ -30,13 +30,14 @@ module.exports = {
             })
     
             blobStream.on("finish", () => {
-                res.status(200).send("Success")
                 console.log("Success")
             })
             url = 'https://storage.cloud.google.com/'+bucket.name+'/'+blob.name
             blobStream.end(req.file.buffer)
         }catch (error) {
-            res.status(500).send(error)
+            return res.send({
+                error:'cannot upload file'
+            })
         }
 
         try{
@@ -48,6 +49,9 @@ module.exports = {
                 Photo : url,
                 IsProceed : false,
                 IsAccepted : false
+            })
+            res.send({
+                redirectPath : '/login'
             })
         }catch(err){
             console.log(err)

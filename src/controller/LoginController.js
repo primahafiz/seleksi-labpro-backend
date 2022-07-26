@@ -17,25 +17,23 @@ module.exports = {
         if(admin.length==1){
             if(await bcrypt.compare(req.body.password,admin[0].Password)){
                 req.session.username = req.body.username
-                return res.redirect('/admin')
-            }else{
                 res.send({
-                    error : 'User is not valid'
+                    redirectPath : '/admin'
                 })
+            }else{
+                throw 'User is not valid'
             }
         }else if(customer.length==1){
             if(await bcrypt.compare(req.body.password,customer[0].Password)){
                 req.session.username = req.body.username
-                return res.redirect('/')
-            }else{
                 res.send({
-                    error : 'User is not valid'
+                    redirectPath : 'customer'
                 })
+            }else{
+                throw 'User is not valid'
             }
         }else{
-            res.send({
-                error : 'User is not valid'
-            })
+            throw 'User is not valid'
         }
     }
 }
