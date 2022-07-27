@@ -2,13 +2,10 @@ const {Admin} = require('../models')
 
 module.exports = {
     async adminHome(req,res){
-        const admin = await Admin.findAll({
-            where : {
-                Username : req.session.username
-            }
-        })
+        res.header('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
+        console.log(req.session.username)
         res.send({
-            name : admin[0].Name
+            name : req.session.name
         })
     }
 }

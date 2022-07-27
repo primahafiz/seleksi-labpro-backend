@@ -13,7 +13,14 @@ const UpdateCurrency = require('./utils/UpdateCurrency')
 const app = express()
 app.use(morgan('combined'))
 app.use(bodyParser.json())
-app.use(cors())
+app.use(
+    cors({
+      origin: "http://localhost:3000",
+      credentials: true,
+    })
+  );
+
+app.set('etag', false)
 
 const SESS_NAME = 'bnmo'
 const SESS_SECRET = uuid()
@@ -26,7 +33,7 @@ app.use(session({
     secret : SESS_SECRET,
     cookie : {
         maxAge : SESS_LIFETIME,
-        sameSite : true,
+        sameSite : 'lax',
         secure : false // pas production jadi true
     }
 }))

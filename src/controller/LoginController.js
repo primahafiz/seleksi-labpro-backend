@@ -17,6 +17,7 @@ module.exports = {
         if(admin.length==1){
             if(await bcrypt.compare(req.body.password,admin[0].Password)){
                 req.session.username = req.body.username
+                req.session.name = admin[0].Name
                 res.send({
                     redirectPath : '/admin'
                 })
@@ -26,6 +27,7 @@ module.exports = {
         }else if(customer.length==1){
             if(await bcrypt.compare(req.body.password,customer[0].Password)){
                 req.session.username = req.body.username
+                req.session.name = customer[0].Name
                 res.send({
                     redirectPath : 'customer'
                 })

@@ -31,14 +31,8 @@ module.exports = {
             saldo += await CurrencyConversion.convertToIDR(transReceiveData[i].TransferCurrency,transReceiveData[i].TransferValue)
         }
 
-        const profile = await Customer.findAll({
-            where : {
-                Username : req.session.username
-            }
-        })
-
         res.send({
-            name : profile[0].Name,
+            name : req.session.name,
             saldo : saldo
         })
     }
