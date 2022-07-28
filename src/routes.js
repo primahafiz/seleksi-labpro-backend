@@ -13,6 +13,7 @@ const RequestListController = require('./controller/RequestListController')
 const RegistrationListController = require('./controller/RegistrationListController')
 const AdminHomeController = require('./controller/AdminHomeController')
 const LogoutController = require('./controller/LogoutController')
+const HistoryTransactionController = require('./controller/HistoryTransactionController')
 const TransferPolicy = require('./policy/TransferPolicy')
 
 module.exports = (app) => {
@@ -42,6 +43,8 @@ module.exports = (app) => {
 
     app.post('/api/transfer',TransferPolicy.checkReceiver,TransferTransactionController.transTransaction)
 
+    app.get('/api/history',HistoryTransactionController.getTransactionHistory)
+    
     app.get('/api/history/request',HistoryRequestController.getRequestHistory)
 
     app.get('/api/history/transfer',HistoryTransferController.getTransferHistory)
