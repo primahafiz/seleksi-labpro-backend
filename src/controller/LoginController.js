@@ -29,7 +29,7 @@ module.exports = {
                 req.session.username = req.body.username
                 req.session.name = customer[0].Name
                 res.send({
-                    redirectPath : 'customer'
+                    redirectPath : '/'
                 })
             }else{
                 throw 'User is not valid'

@@ -12,7 +12,6 @@ module.exports = {
         for(let i=0;i<customer.length;i++){
             customer[i].dataValues.formattedDate = FormatDate.formatDate(customer[i].createdAt)
         }
-        console.log(customer)
         res.send({
             data : customer
         })

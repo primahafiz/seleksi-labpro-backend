@@ -6,6 +6,7 @@ module.exports = {
         var saldo = 0.0
         const reqData = await RequestTransaction.findAll({
             where : {
+                IsAccepted : true,
                 Username : req.session.username
             }
         })

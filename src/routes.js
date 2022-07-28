@@ -13,10 +13,11 @@ const RequestListController = require('./controller/RequestListController')
 const RegistrationListController = require('./controller/RegistrationListController')
 const AdminHomeController = require('./controller/AdminHomeController')
 const LogoutController = require('./controller/LogoutController')
+const TransferPolicy = require('./policy/TransferPolicy')
 
 module.exports = (app) => {
 
-    app.get('/',HomeController.getHomeInfo)
+    app.get('/api',HomeController.getHomeInfo)
 
     const multer = Multer({
         storage: Multer.memoryStorage(),
@@ -25,37 +26,37 @@ module.exports = (app) => {
         }
       });
     
-    app.post('/register',multer.single('photo'), RegisterController.registerCustomer)
+    app.post('/api/register',multer.single('photo'), RegisterController.registerCustomer)
 
-    app.get('/login',(req,res) => {res.send()})
+    app.get('/api/login',(req,res) => {res.send()})
     
-    app.post('/login',LoginController.login)
+    app.post('/api/login',LoginController.login)
 
-    app.post('/logout',LogoutController.logout)
+    app.post('/api/logout',LogoutController.logout)
     
-    app.get('/request', CurrencyListController.getListCurrency)
+    app.get('/api/request', CurrencyListController.getListCurrency)
 
-    app.post('/request',RequestTransactionController.reqTransaction)
+    app.post('/api/request',RequestTransactionController.reqTransaction)
 
-    app.get('/transfer', CurrencyListController.getListCurrency)
+    app.get('/api/transfer', CurrencyListController.getListCurrency)
 
-    app.post('/transfer',TransferTransactionController.transTransaction)
+    app.post('/api/transfer',TransferPolicy.checkReceiver,TransferTransactionController.transTransaction)
 
-    app.get('/history/request',HistoryRequestController.getRequestHistory)
+    app.get('/api/history/request',HistoryRequestController.getRequestHistory)
 
-    app.get('/history/transfer',HistoryTransferController.getTransferHistory)
+    app.get('/api/history/transfer',HistoryTransferController.getTransferHistory)
 
-    app.get('/admin',AdminHomeController.adminHome)
+    app.get('/api/admin',AdminHomeController.adminHome)
 
-    app.get('/admin/verify-registration',RegistrationListController.getAllCustomer)
+    app.get('/api/admin/verify-registration',RegistrationListController.getAllCustomer)
 
-    app.put('/admin/verify-registration/accept/:username',VerifyRegistrationController.acceptRegistration)
+    app.put('/api/admin/verify-registration/accept/:username',VerifyRegistrationController.acceptRegistration)
 
-    app.put('/admin/verify-registration/decline/:username',VerifyRegistrationController.declineRegistration)
+    app.put('/api/admin/verify-registration/decline/:username',VerifyRegistrationController.declineRegistration)
 
-    app.get('/admin/verify-request',RequestListController.getAllRequest)
+    app.get('/api/admin/verify-request',RequestListController.getAllRequest)
 
-    app.put('/admin/verify-request/accept/:idrequest',VerifyRequestController.acceptRequest)
+    app.put('/api/admin/verify-request/accept/:idrequest',VerifyRequestController.acceptRequest)
 
-    app.put('/admin/verify-request/decline/:idrequest',VerifyRequestController.declineRequest)
+    app.put('/api/admin/verify-request/decline/:idrequest',VerifyRequestController.declineRequest)
 }

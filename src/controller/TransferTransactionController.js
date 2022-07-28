@@ -2,6 +2,7 @@ const {Customer} = require('../models')
 
 module.exports = {
     async transTransaction(req,res){
+        console.log(req.body)
         const customer = await Customer.findAll({
             where : {
                 Username : req.session.username
