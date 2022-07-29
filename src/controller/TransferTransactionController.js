@@ -1,8 +1,8 @@
 const {Customer} = require('../models')
+const Saldo = require('../utils/Saldo')
 
 module.exports = {
     async transTransaction(req,res){
-        console.log(req.body)
         const customer = await Customer.findAll({
             where : {
                 Username : req.session.username

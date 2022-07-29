@@ -15,11 +15,12 @@ const HistoryTransactionController = require('./controller/HistoryTransactionCon
 const ProfileController = require('./controller/ProfileController')
 const ProfileAdminController = require('./controller/ProfileAdminController')
 const SearchController = require('./controller/SearchController')
+const IsAdmin = require('./controller/IsAdmin')
+const IsCustomer = require('./controller/IsCustomer')
 const TransferPolicy = require('./policy/TransferPolicy')
+const RegisterPolicy = require('./policy/RegisterPolicy')
 
 module.exports = (app) => {
-
-    app.get('/api',HomeController.getHomeInfo)
 
     const multer = Multer({
         storage: Multer.memoryStorage(),
@@ -28,7 +29,7 @@ module.exports = (app) => {
         }
       });
     
-    app.post('/api/register',multer.single('photo'), RegisterController.registerCustomer)
+    app.post('/api/register',multer.single('photo'),RegisterPolicy.checkRegisterData, RegisterController.registerCustomer)
 
     app.get('/api/login',(req,res) => {res.send()})
     
@@ -36,17 +37,13 @@ module.exports = (app) => {
 
     app.post('/api/logout',LogoutController.logout)
     
-    app.get('/api/request', CurrencyListController.getListCurrency)
+    app.get('/api/currency', CurrencyListController.getListCurrency)
 
     app.post('/api/request',RequestTransactionController.reqTransaction)
-
-    app.get('/api/transfer', CurrencyListController.getListCurrency)
 
     app.post('/api/transfer',TransferPolicy.checkReceiver,TransferTransactionController.transTransaction)
 
     app.get('/api/history',HistoryTransactionController.getTransactionHistory)
-
-    app.get('/api/admin',AdminHomeController.adminHome)
 
     app.get('/api/admin/verify-registration',RegistrationListController.getAllCustomer)
 
@@ -65,4 +62,8 @@ module.exports = (app) => {
     app.get('/api/profile/:username',ProfileAdminController.getProfile)
 
     app.get('/api/search',SearchController.getCustomerByInput)
+
+    app.get('/api/isAdmin',IsAdmin.isAdmin)
+
+    app.get('/api/isCustomer',IsCustomer.isCustomer)
 }
