@@ -3,8 +3,6 @@ const RegisterController = require('./controller/RegisterController')
 const LoginController = require('./controller/LoginController')
 const RequestTransactionController = require('./controller/RequestTransactionController')
 const TransferTransactionController = require('./controller/TransferTransactionController')
-const HistoryRequestController = require('./controller/HistoryRequestController')
-const HistoryTransferController = require('./controller/HistoryTransferTransaction')
 const VerifyRegistrationController = require('./controller/VerifyRegistrationController')
 const VerifyRequestController = require('./controller/VerifyRequestController')
 const CurrencyListController = require('./controller/CurrencyListController')
@@ -14,6 +12,9 @@ const RegistrationListController = require('./controller/RegistrationListControl
 const AdminHomeController = require('./controller/AdminHomeController')
 const LogoutController = require('./controller/LogoutController')
 const HistoryTransactionController = require('./controller/HistoryTransactionController')
+const ProfileController = require('./controller/ProfileController')
+const ProfileAdminController = require('./controller/ProfileAdminController')
+const SearchController = require('./controller/SearchController')
 const TransferPolicy = require('./policy/TransferPolicy')
 
 module.exports = (app) => {
@@ -44,10 +45,6 @@ module.exports = (app) => {
     app.post('/api/transfer',TransferPolicy.checkReceiver,TransferTransactionController.transTransaction)
 
     app.get('/api/history',HistoryTransactionController.getTransactionHistory)
-    
-    app.get('/api/history/request',HistoryRequestController.getRequestHistory)
-
-    app.get('/api/history/transfer',HistoryTransferController.getTransferHistory)
 
     app.get('/api/admin',AdminHomeController.adminHome)
 
@@ -62,4 +59,10 @@ module.exports = (app) => {
     app.put('/api/admin/verify-request/accept/:idrequest',VerifyRequestController.acceptRequest)
 
     app.put('/api/admin/verify-request/decline/:idrequest',VerifyRequestController.declineRequest)
+
+    app.get('/api/profile',ProfileController.getProfile)
+
+    app.get('/api/profile/:username',ProfileAdminController.getProfile)
+
+    app.get('/api/search',SearchController.getCustomerByInput)
 }
