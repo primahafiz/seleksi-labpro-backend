@@ -9,6 +9,7 @@ const { uuid } = require('uuidv4');
 const schedule = require('node-schedule');
 const bcrypt = require('bcrypt')
 const UpdateCurrency = require('./utils/UpdateCurrency')
+const Seeder = require('./utils/Seeder')
 
 const app = express()
 app.use(morgan('combined'))
@@ -46,9 +47,12 @@ const rule = new schedule.RecurrenceRule();
 rule.hour = 23;
 rule.minute = 0;
 
+
 const job = schedule.scheduleJob(rule,async function(){
     await UpdateCurrency.updateCurrency()
 })
+
+Seeder.initData()
 
 sequelize.sync({force:false})
     .then(() => {
