@@ -32,10 +32,12 @@ app.use(session({
     resave : false,
     saveUninitialized : false,
     secret : SESS_SECRET,
+    httpOnly: false,
     cookie : {
         maxAge : SESS_LIFETIME,
         domain : 'https://bnmo-app.herokuapp.com',
-        secure : false
+        sameSite : 'none',
+        secure : true
     }
 }))
 
