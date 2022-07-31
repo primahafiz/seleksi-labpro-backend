@@ -34,7 +34,7 @@ app.use(session({
     secret : SESS_SECRET,
     cookie : {
         maxAge : SESS_LIFETIME,
-        sameSite : 'lax',
+        sameSite : 'none',
         secure : false // pas production jadi true
     }
 }))
