@@ -34,6 +34,7 @@ app.use(session({
     secret : SESS_SECRET,
     cookie : {
         maxAge : SESS_LIFETIME,
+        domain : 'https://bnmo-app.herokuapp.com',
         sameSite : 'none',
         secure : true
     }
