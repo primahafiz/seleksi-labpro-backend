@@ -30,8 +30,6 @@ module.exports = (app) => {
       });
     
     app.post('/api/register',multer.single('photo'),RegisterPolicy.checkRegisterData, RegisterController.registerCustomer)
-
-    app.get('/api/login',(req,res) => {res.send()})
     
     app.post('/api/login',LoginController.login)
 
@@ -66,4 +64,15 @@ module.exports = (app) => {
     app.get('/api/isAdmin',IsAdmin.isAdmin)
 
     app.get('/api/isCustomer',IsCustomer.isCustomer)
+
+    app.get('/api/login',(req,res) => {res.send({})})
+    app.get('/api/register',(req,res) => {res.send({})})
+    app.get('/api',(req,res) => {res.send({})})
+    app.get('/api/request',(req,res) => {res.send({})})
+    app.get('/api/transfer',(req,res) => {res.send({})})
+    app.get('/api/admin',(req,res) => {res.send({})})
+    app.get('/api/admin/verify-registration',(req,res) => {res.send({})})
+    app.get('/api/admin/verify-request',(req,res) => {res.send({})})
+    app.get('/api/admin/search',(req,res) => {res.send({})})
+    app.get('/api/admin/profile/:user',(req,res) => {res.send({})})
 }
