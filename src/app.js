@@ -30,7 +30,7 @@ const SESS_LIFETIME = 3600000
 app.use(session({
     name : SESS_NAME,
     resave : false,
-    saveUninitialized : false,
+    saveUninitialized : true,
     secret : SESS_SECRET,
     httpOnly: false,
     cookie : {
