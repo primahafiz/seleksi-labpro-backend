@@ -16,7 +16,7 @@ app.use(morgan('combined'))
 app.use(bodyParser.json())
 app.use(
     cors({
-      origin: "https://bnmo-app.herokuapp.com/",
+      origin: "http://localhost:3000",
       credentials: true,
     })
   );
