@@ -16,7 +16,7 @@ app.use(morgan('combined'))
 app.use(bodyParser.json())
 app.use(
     cors({
-      origin: "https://bnmo-app.herokuapp.com",
+      origin: "http://localhost:3000",
       credentials: true,
     })
   );
@@ -30,12 +30,11 @@ const SESS_LIFETIME = 3600000
 app.use(session({
     name : SESS_NAME,
     resave : false,
-    saveUninitialized : true,
+    saveUninitialized : false,
     secret : SESS_SECRET,
     httpOnly: false,
     cookie : {
         maxAge : SESS_LIFETIME,
-        domain : 'https://bnmo-app.herokuapp.com',
         sameSite : 'lax',
         secure : false
     }
