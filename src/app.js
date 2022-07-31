@@ -35,7 +35,7 @@ app.use(session({
     cookie : {
         maxAge : SESS_LIFETIME,
         sameSite : 'none',
-        secure : false // pas production jadi true
+        secure : true
     }
 }))
 
