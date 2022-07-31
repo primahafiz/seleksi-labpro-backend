@@ -16,7 +16,7 @@ app.use(morgan('combined'))
 app.use(bodyParser.json())
 app.use(
     cors({
-      origin: "http://localhost:3000",
+      origin: "https://bnmo-app.herokuapp.com/",
       credentials: true,
     })
   );
@@ -34,8 +34,8 @@ app.use(session({
     secret : SESS_SECRET,
     cookie : {
         maxAge : SESS_LIFETIME,
-        sameSite : 'lax',
-        secure : false // pas production jadi true
+        sameSite : 'none',
+        secure : true
     }
 }))
 
