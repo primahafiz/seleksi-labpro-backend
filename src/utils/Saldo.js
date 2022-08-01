@@ -32,6 +32,6 @@ module.exports = {
             saldo += await CurrencyConversion.convertToIDR(transReceiveData[i].TransferCurrency,transReceiveData[i].TransferValue)
         }
 
-        return saldo
+        return Math.floor(saldo)
     }
 }
