@@ -5,18 +5,25 @@ BNMO is a Web Application which has bank integration features such as transfer a
 - Primanda Adyatma Hafiz (13520022)
 
 ## How To Run
+#### CLI
 1. Clone this repository
 2. Install npm
 3. Run ```npm install``` command inside repository folder
 4. Server is started on http://localhost:8081/
 
+#### Run on Docker
+1. Clone this repository
+2. Run ```docker-compose build``` command inside repository folder
+3. Server is started on docker image
+
+#### Deployed server
+You can request the api on https://api-bnmo.herokuapp.com/
+
 ## Design Pattern
 1. Design Pattern Composite </br>
-Composite pattern is used when an object is consisted of some simpler object and that simpler object is consisted of way simpler object and so on. In this case, I use this
-pattern to represent Customer object because it consists of multiple transactions that it already did
+Composite pattern is used when an object is consisted of some simpler object and that simpler object is consisted of way simpler object and so on. In this case, I use this pattern to represent Customer object because it consists of multiple transactions that it already did
 2. Design Pattern Builder </br>
-Builder pattern is used when building complex object using simpler object and using step by step approach. In this case, I use this pattern when building Customer objects by
-adding request and transfer transactions to them.
+Builder pattern is used when building complex object using simpler object and using step by step approach. In this case, I use this pattern when building Customer objects by adding request and transfer transactions to them.
 
 ## Technologies Used
 - google-cloud storage (v6.2.3)
@@ -29,4 +36,4 @@ adding request and transfer transactions to them.
 - sequelize (v6.2.13)
 
 ## How To Use
-You can run the server on local or access deployed server in .... and start to make request to the api with register account and then login.
+You can run the server on local with CLI or access deployed server on https://api-bnmo.herokuapp.com/. Firstly, to make request on the api you can register your account and then login.
