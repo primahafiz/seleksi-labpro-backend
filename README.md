@@ -54,7 +54,7 @@ You can run the server on local with CLI or access deployed server on https://ap
       <td>Login Endpoint</td>
     </tr>
     <tr>
-      <td>/api/logout</td>
+      <td>/api/logout (POST)</td>
       <td>Logout Endpoint</td>
     </tr>
     <tr>
@@ -110,11 +110,11 @@ You can run the server on local with CLI or access deployed server on https://ap
       <td>Detail Admin's Search Customer Endpoint</td>
     </tr>
     <tr>
-      <td>/api/isAdmin</td>
+      <td>/api/isAdmin (GET)</td>
       <td>Check If Current User Is Admin</td>
     </tr>
     <tr>
-      <td>/api/isCustomer</td>
+      <td>/api/isCustomer (GET)</td>
       <td>Check If Current User Is Customer</td>
     </tr>
 </table>
