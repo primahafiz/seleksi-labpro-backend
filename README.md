@@ -37,3 +37,84 @@ Builder pattern is used when building complex object using simpler object and us
 
 ## How To Use
 You can run the server on local with CLI or access deployed server on https://api-bnmo.herokuapp.com/. Firstly, to make request on the api you can register your account and then login.
+
+## Endpoint
+<table>
+  <thead>
+    <td>Endpoint</td>
+    <td>Description</td>
+  </thead>
+  <tbody>
+    <tr>
+      <td>/api/register (POST)</td>
+      <td>Registration Customer Endpoint</td>
+    </tr>
+    <tr>
+      <td>/api/login (POST)</td>
+      <td>Login Endpoint</td>
+    </tr>
+    <tr>
+      <td>/api/logout</td>
+      <td>Logout Endpoint</td>
+    </tr>
+    <tr>
+      <td>/api/currency (GET)</td>
+      <td>Currencies Available</td>
+    </tr>
+    <tr>
+      <td>/api/request (POST)</td>
+      <td>Request Transaction Endpoint</td>
+    </tr>
+    <tr>
+      <td>/api/transfer (POST)</td>
+      <td>Transfer Transaction Endpoint</td>
+    </tr>
+    <tr>
+      <td>/api/history (GET)</td>
+      <td>History Transaction of Customer Endpoint</td>
+    </tr>
+    <tr>
+      <td>/api/admin/verify-registration (GET)</td>
+      <td>Unverified Customer Registration List</td>
+    </tr>
+    <tr>
+      <td>/api/admin/verify-registration/accept/:username (PUT)</td>
+      <td>Accept Registration Endpoint</td>
+    </tr>
+    <tr>
+      <td>/api/admin/verify-registration/decline/:username (PUT)</td>
+      <td>Decline Registration Endpoint</td>
+    </tr>
+    <tr>
+      <td>/api/admin/verify-request (GET)</td>
+      <td>Unverified Customer Request List</td>
+    </tr>
+    <tr>
+      <td>/api/admin/verify-request/accept/:idrequest (PUT)</td>
+      <td>Accept Request Endpoint</td>
+    </tr>
+    <tr>
+      <td>/api/admin/verify-request/decline/:idrequest (PUT)</td>
+      <td>Decline Request Endpoint</td>
+    </tr>
+    <tr>
+      <td>/api/profile (GET)</td>
+      <td>Customer's Profile Endpoint</td>
+    </tr>
+    <tr>
+      <td>/api/search (GET)</td>
+      <td>Admin's Search Customer Endpoint</td>
+    </tr>
+    <tr>
+      <td>/api/profile/:username (GET)</td>
+      <td>Detail Admin's Search Customer Endpoint</td>
+    </tr>
+    <tr>
+      <td>/api/isAdmin</td>
+      <td>Check If Current User Is Admin</td>
+    </tr>
+    <tr>
+      <td>/api/isCustomer</td>
+      <td>Check If Current User Is Customer</td>
+    </tr>
+</table>
