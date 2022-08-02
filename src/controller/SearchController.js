@@ -6,7 +6,8 @@ module.exports = {
         if(req.query.searchInput){
             const customer = await Customer.findAll({
                 where : {
-                    Username : {[Op.like]: `%${req.query.searchInput}%`}
+                    Username : {[Op.like]: `%${req.query.searchInput}%`},
+                    IsAccepted : true
                 }
             })
             res.send({
