@@ -34,8 +34,3 @@ test('Request Transaction Test', async function() {
 test('Token JWT Test', function() {
     expect(TokenJWT.isTokenAdmin(TokenJWT.getTokenAdmin())).toBe(true);
     });
-
-test('Balance Calculation Test', async function() {
-    const balance = await Saldo.calcSaldo('Fandi')
-    expect(balance).toBe(3874204734);
-    });
